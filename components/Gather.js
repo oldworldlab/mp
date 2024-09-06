@@ -79,41 +79,41 @@ function Gather({ provider, account, connectWallet }) {
           <>
             <Typography variant="h6">Connected as: {account}</Typography>
 
-          <TextField
-            select
-            label="Select Resource"
-            value={selectedItem}
-            onChange={(e) => setSelectedItem(e.target.value)}
-            sx={{ mb: 2, width: '200px' }}
-          >
-            {Object.keys(items).map((key) => (
-              <MenuItem key={key} value={items[key]}>
-                {key}
-              </MenuItem>
-            ))}
-          </TextField>
+            <TextField
+              select
+              label="Select Resource"
+              value={selectedItem}
+              onChange={(e) => setSelectedItem(e.target.value)}
+              sx={{ mb: 2, width: '200px' }}
+            >
+              {Object.keys(items).map((key) => (
+                <MenuItem key={key} value={items[key]}>
+                  {key}
+                </MenuItem>
+              ))}
+            </TextField>
 
-          <TextField
-            type="number"
-            label="Amount"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            sx={{ mb: 2, width: '200px' }}
-            inputProps={{ min: 1 }}
-          />
+            <TextField
+              type="number"
+              label="Amount"
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+              sx={{ mb: 2, width: '200px' }}
+              inputProps={{ min: 1 }}
+            />
 
-          <Button variant="contained" color="primary" onClick={gatherResources}>
-            Gather
-          </Button>
+            <Button variant="contained" color="primary" onClick={gatherResources}>
+              Gather
+            </Button>
 
-          <Typography variant="h6" sx={{ mt: 4 }}>Your Resource Balances:</Typography>
-          <ul style={{ listStyleType: "none", padding: 0 }}>
-            {Object.keys(balances).map((key) => (
-              <li key={key}>
-                {key}: {balances[key]}
-              </li>
-            ))}
-          </ul>
+            <Typography variant="h6" sx={{ mt: 4 }}>Your Resource Balances:</Typography>
+            <ul style={{ listStyleType: "none", padding: 0 }}>
+              {Object.keys(balances).map((key) => (
+                <li key={key}>
+                  {key}: {balances[key]}
+                </li>
+              ))}
+            </ul>
           </>
         ) : (
           <Button variant="contained" onClick={connectWallet}>
