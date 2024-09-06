@@ -1,61 +1,35 @@
-import { useState, useEffect } from 'react';
-import { BrowserProvider } from 'ethers';
+import React, { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
 
-const WalletConnection = () => {
+const WalletConnection = ({ setProvider }) => {
   const [account, setAccount] = useState(null);
-  const [balance, setBalance] = useState(null);
-
-  const connectWallet = async () => {
-    if (window.ethereum) {
-      try {
-        const provider = new BrowserProvider(window.ethereum);
-        const accounts = await provider.send("eth_requestAccounts", []);
-        setAccount(accounts[0]);
-        fetchBalance(provider, accounts[0]);
-      } catch (error) {
-        console.error("Error connecting to MetaMask:", error);
-      }
-    } else {
-      alert("MetaMask not found. Please install it.");
-    }
-  };
-
-  const fetchBalance = async (provider, account) => {
-    try {
-      const balanceInWei = await provider.getBalance(account);
-      const balanceInEth = ethers.formatEther(balanceInWei);
-      setBalance(balanceInEth);
-    } catch (error) {
-      console.error("Error fetching balance:", error);
-    }
-  };
 
   useEffect(() => {
-    if (window.ethereum) {
-      window.ethereum.on('accountsChanged', (accounts) => {
-        setAccount(accounts[0]);
-        fetchBalance(new BrowserProvider(window.ethereum), accounts[0]);
-      });
-    }
-    // Update balance after minting
-    window.ethereum.on('chainChanged', () => {
-      fetchBalance(new ethers.BrowserProvider(window.ethereum), account);
-    });
-  }, [account]);
+    const connectWallet = async () => {
+      if (window.ethereum) {
+        const provider = new ethers.BrowserProvider(window.ethereum);
+        await provider.send('eth_requestAccounts', []);
+        const signer = provider.getSigner();
+        const account = await signer.getAddress();
+        setAccount(account);
+        setProvider(provider); // Set the provider for the entire app
+      } else {
+        console.log("Please install MetaMask!");
+      }
+    };
+
+    connectWallet();
+  }, [setProvider]);
 
   return (
     <div>
-      {!account ? (
-        <button onClick={connectWallet}>Connect Wallet</button>
+      {account ? (
+        <p>Connected: {account}</p>
       ) : (
-        <div>
-          <p>Connected: {account}</p>
-          <p>Balance: {balance ? `${balance} ETH` : 'Fetching balance...'}</p>
-        </div>
+        <button onClick={connectWallet}>Connect Wallet</button>
       )}
     </div>
   );
-}
+};
 
 export default WalletConnection;
