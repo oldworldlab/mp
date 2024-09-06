@@ -20,9 +20,8 @@ const items = {
 };
 
 function Gather() {
-  const [provider, setProvider] = useState(null);
   const [contract, setContract] = useState(null);
-  const [account, setAccount] = useState('');
+  // Remove provider and account state since they are passed as props
   const [selectedItem, setSelectedItem] = useState(items.ORE);
   const [amount, setAmount] = useState(1);
   const [balances, setBalances] = useState({
