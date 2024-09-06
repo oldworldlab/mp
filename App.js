@@ -177,6 +177,10 @@ function App() {
               element={<Gather />} // New Gather route
             />
             <Route 
+              path="/crafting" 
+              element={<Crafting />} // New route for Crafting
+            />
+            <Route 
               path="/profile" 
               element={
                 <UserProfile 
