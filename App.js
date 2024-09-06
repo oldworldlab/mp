@@ -135,7 +135,6 @@ function App() {
       <div style={{ backgroundColor: '#1a1a1a', color: '#ffffff', fontFamily: 'Arial, sans-serif', minHeight: '100vh', padding: '20px' }}>
         <Header />
         <WalletConnection />
-        <Marketplace items={items} onBuyItem={handleBuyItem} />
         <Container maxWidth="xl">
           <Routes>
             <Route 
