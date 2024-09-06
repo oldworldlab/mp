@@ -10,6 +10,7 @@ import CraftingMenu from './components/CraftingMenu';
 import UserProfile from './components/UserProfile';
 import Header from './components/Header';
 import Gather from './components/Gather'; // Make sure Gather component is imported
+import Crafting from './components/Crafting'; // Import the Crafting component
 
 function App() {
   const [account] = useState(null);
