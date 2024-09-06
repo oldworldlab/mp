@@ -19,7 +19,7 @@ const items = {
   STONE: 5,
 };
 
-function Gather() {
+function Gather({ provider, account, connectWallet }) {
   const [contract, setContract] = useState(null);
   // Remove provider and account state since they are passed as props
   const [selectedItem, setSelectedItem] = useState(items.ORE);

@@ -206,7 +206,13 @@ function App() {
             />
             <Route 
               path="/gather" 
-              element={<Gather />} // New Gather route
+              element={
+                <Gather 
+                  provider={provider} 
+                  account={account} 
+                  connectWallet={connectWallet} 
+                />
+              } 
             />
             <Route 
               path="/profile" 
