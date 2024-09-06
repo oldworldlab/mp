@@ -3,7 +3,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Im
 import { Container } from '@mui/material'; // Import Container from Material-UI
 
 // Import all your custom components
-import WalletConnection from './components/WalletConnection';
+import React, { useState, useEffect } from 'react'; // Add useEffect for wallet connection
+import { ethers } from 'ethers'; // Import ethers for wallet connection
+
+// Remove WalletConnection import since we will handle it here
 import Marketplace from './components/Marketplace';
 import Inventory from './components/Inventory';
 import CraftingMenu from './components/CraftingMenu'; // Correct import for CraftingMenu
@@ -13,7 +16,30 @@ import Gather from './components/Gather'; // Make sure Gather component is impor
 import ResourceCrafting from './components/ResourceCrafting.js'; // Ensure correct import path
 
 function App() {
-  const [account] = useState(null);
+  const [provider, setProvider] = useState(null);
+  const [account, setAccount] = useState(null);
+
+  // Function to connect wallet
+  const connectWallet = async () => {
+    if (window.ethereum) {
+      try {
+        const _provider = new ethers.BrowserProvider(window.ethereum);
+        await _provider.send('eth_requestAccounts', []);
+        const signer = _provider.getSigner();
+        const _account = await signer.getAddress();
+        setProvider(_provider);
+        setAccount(_account);
+      } catch (error) {
+        console.error("Error connecting wallet:", error);
+      }
+    } else {
+      console.log("Please install MetaMask!");
+    }
+  };
+
+  useEffect(() => {
+    connectWallet();
+  }, []);
   const [selectedItem, setSelectedItem] = useState(null);
   const [category, setCategory] = useState('All');
   const [currency, setCurrency] = useState(100);
@@ -134,7 +160,13 @@ function App() {
     <Router>
       <div style={{ backgroundColor: '#1a1a1a', color: '#ffffff', fontFamily: 'Arial, sans-serif', minHeight: '100vh', padding: '20px' }}>
         <Header />
-        <WalletConnection />
+        <div>
+          {account ? (
+            <p>Connected: {account}</p>
+          ) : (
+            <button onClick={connectWallet}>Connect Wallet</button>
+          )}
+        </div>
         <Container maxWidth="xl">
           <Routes>
             <Route 

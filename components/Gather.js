@@ -33,26 +33,14 @@ function Gather() {
     STONE: 0,
   });
 
-  // Connect to MetaMask
-  const connectWallet = async () => {
-    if (window.ethereum) {
-      const _provider = new ethers.BrowserProvider(window.ethereum); // Use BrowserProvider instead of Web3Provider
-      await _provider.send("eth_requestAccounts", []); // This replaces the older request accounts method
-      const signer = await _provider.getSigner();
-      const _account = await signer.getAddress();
-      setProvider(_provider);
-      setAccount(_account);
-      
-      // Connect to the contract
+  useEffect(() => {
+    if (provider && account) {
+      const signer = provider.getSigner();
       const _contract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer);
       setContract(_contract);
-
-      // Load initial balances
-      await loadBalances(_contract, _account);
-    } else {
-      alert("Please install MetaMask to use this feature.");
+      loadBalances(_contract, account);
     }
-  };
+  }, [provider, account]);
 
   // Load balances of the resources for the connected account
   const loadBalances = async (_contract, _account) => {
