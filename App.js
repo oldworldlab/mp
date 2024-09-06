@@ -14,6 +14,7 @@ import ResourceCrafting from './components/ResourceCrafting'; // Ensure correct 
 
 function App() {
   const [account] = useState(null);
+  const [selectedItem, setSelectedItem] = useState(null);
   const [category, setCategory] = useState('All');
   const [currency, setCurrency] = useState(100);
   const [items, setItems] = useState([
@@ -184,8 +185,6 @@ function App() {
                   account={account} 
                   currency={currency} 
                   transactions={transactions}
-                  offersMade={offersMade}
-                  offersReceived={offersReceived}
                 />
               } 
             />
