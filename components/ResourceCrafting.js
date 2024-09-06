@@ -1,12 +1,11 @@
 import React from 'react';
 
-function ResourceCrafting() {
+const ResourceCrafting = () => {
   return (
     <div>
-      <h1>Resource Crafting</h1>
-      <p>Welcome to the Resource Crafting page!</p>
+      <h1>Resource Crafting Page</h1>
     </div>
   );
-}
+};
 
 export default ResourceCrafting;
