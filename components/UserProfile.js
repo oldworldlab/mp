@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Typography, Grid, Paper, List, ListItem, ListItemText } from '@mui/material';
 
-function UserProfile({ account, currency, transactions, offersMade, offersReceived }) {
+function UserProfile({ account, currency, transactions = [], offersMade = [], offersReceived = [] }) {
   return (
     <Box sx={{ padding: '20px' }}>
       <Typography variant="h4" gutterBottom>User Profile</Typography>
