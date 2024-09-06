@@ -7,6 +7,7 @@ import WalletConnection from './components/WalletConnection';
 import Marketplace from './components/Marketplace';
 import Inventory from './components/Inventory';
 import CraftingMenu from './components/CraftingMenu';
+import Crafting from './components/Crafting'; // Import the Crafting component
 import UserProfile from './components/UserProfile';
 import Header from './components/Header';
 import Gather from './components/Gather'; // Make sure Gather component is imported
