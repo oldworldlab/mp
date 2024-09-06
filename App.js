@@ -173,6 +173,10 @@ function App() {
               } 
             />
             <Route 
+              path="/resource-crafting" 
+              element={<ResourceCrafting />} // New Resource Crafting route
+            />
+            <Route 
               path="/gather" 
               element={<Gather />} // New Gather route
             />

@@ -20,6 +20,9 @@ function Header() {
         <Button color="inherit" component={Link} to="/crafting">
           Crafting
         </Button>
+        <Button color="inherit" component={Link} to="/resource-crafting">
+          Resource Crafting {/* New navigation option for Resource Crafting */}
+        </Button>
         <Button color="inherit" component={Link} to="/gather">
           Gather
         </Button>
