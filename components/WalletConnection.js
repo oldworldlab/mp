@@ -30,7 +30,7 @@ const WalletConnection = ({ setProvider }) => {
 
   useEffect(() => {
     connectWallet();
-  }, [setProvider]);
+  }, [setProvider, connectWallet]);
 
   return (
     <div>

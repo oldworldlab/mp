@@ -28,9 +28,6 @@ function App() {
     { name: 'Cloth', category: 'Materials', quantity: 30, description: 'A piece of cloth.', stats: {}, tier: 1 },
     { name: 'Wood', category: 'Materials', quantity: 25, description: 'A sturdy piece of wood.', stats: {}, tier: 1 },
   ]);
-  const [selectedItem, setSelectedItem] = useState(null);
-  const [offersMade, setOffersMade] = useState([]);
-  const [offersReceived, setOffersReceived] = useState([]);
   const [transactions, setTransactions] = useState([]);
 
   const handleCategoryChange = (newCategory) => setCategory(newCategory);
