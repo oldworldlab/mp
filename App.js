@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'; // Correct import for useState and useEffect
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import Router, Routes, Route from react-router-dom
-import { Container } from '@mui/material'; // Import Container from Material-UI
+import { Container, Typography, Button } from '@mui/material'; // Import Container, Typography, and Button from Material-UI
 
 // Import all your custom components
 import { ethers } from 'ethers'; // Import ethers for wallet connection
