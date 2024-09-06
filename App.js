@@ -6,8 +6,7 @@ import { Container } from '@mui/material'; // Import Container from Material-UI
 import WalletConnection from './components/WalletConnection';
 import Marketplace from './components/Marketplace';
 import Inventory from './components/Inventory';
-import CraftingMenu from './components/CraftingMenu';
-import Crafting from './components/Crafting'; // Import the Crafting component
+import Crafting from './components/Crafting'; // Only keep this
 import UserProfile from './components/UserProfile';
 import Header from './components/Header';
 import Gather from './components/Gather'; // Make sure Gather component is imported
