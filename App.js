@@ -1,18 +1,16 @@
-import React, { useState, useEffect } from 'react'; // Correct import for useState and useEffect
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import Router, Routes, Route from react-router-dom
-import { Container, Typography, Button } from '@mui/material'; // Import Container, Typography, and Button from Material-UI
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Container, Typography, Button } from '@mui/material';
+import { ethers } from 'ethers';
 
-// Import all your custom components
-import { ethers } from 'ethers'; // Import ethers for wallet connection
-
-// Remove WalletConnection import since we will handle it here
 import Marketplace from './components/Marketplace';
 import Inventory from './components/Inventory';
-import CraftingMenu from './components/CraftingMenu'; // Correct import for CraftingMenu
+import CraftingMenu from './components/CraftingMenu';
 import UserProfile from './components/UserProfile';
 import Header from './components/Header';
-import Gather from './components/Gather'; // Make sure Gather component is imported
-import ResourceCrafting from './components/ResourceCrafting.js'; // Ensure correct import path
+import Gather from './components/Gather';
+import ResourceCrafting from './components/ResourceCrafting';
+import WalletConnection from './components/WalletConnection';
 
 function App() {
   const [provider, setProvider] = useState(null);
