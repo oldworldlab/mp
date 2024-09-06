@@ -9,7 +9,7 @@ import CraftingMenu from './components/CraftingMenu';
 import UserProfile from './components/UserProfile';
 import Header from './components/Header';
 import Gather from './components/Gather';
-import ResourceCrafting from './components/ResourceCrafting';
+import ResourceCrafting from './components/ResourceCrafting';  // This is the correct import
 import WalletConnection from './components/WalletConnection';
 
 function App() {
