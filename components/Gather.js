@@ -33,13 +33,15 @@ function Gather({ provider, account, connectWallet }) {
   });
 
   useEffect(() => {
-    if (provider && account) {
+    if (!account) {
+      connectWallet();
+    } else if (provider) {
       const signer = provider.getSigner();
       const _contract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer);
       setContract(_contract);
       loadBalances(_contract, account);
     }
-  }, [provider, account]);
+  }, [provider, account, connectWallet]);
 
   // Load balances of the resources for the connected account
   const loadBalances = async (_contract, _account) => {

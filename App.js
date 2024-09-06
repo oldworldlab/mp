@@ -37,8 +37,10 @@ function App() {
   };
 
   useEffect(() => {
-    connectWallet();
-  }, []);
+    if (!account) {
+      connectWallet();
+    }
+  }, [account]);
   const [selectedItem, setSelectedItem] = useState(null);
   const [category, setCategory] = useState('All');
   const [currency, setCurrency] = useState(100);
