@@ -6,7 +6,7 @@ import { Container } from '@mui/material'; // Import Container from Material-UI
 import WalletConnection from './components/WalletConnection';
 import Marketplace from './components/Marketplace';
 import Inventory from './components/Inventory';
-import Crafting from './components/Crafting'; // Only keep this
+import CraftingMenu from './components/CraftingMenu'; // Correct import for CraftingMenu
 import UserProfile from './components/UserProfile';
 import Header from './components/Header';
 import Gather from './components/Gather'; // Make sure Gather component is imported
@@ -175,10 +175,6 @@ function App() {
             <Route 
               path="/gather" 
               element={<Gather />} // New Gather route
-            />
-            <Route 
-              path="/crafting" 
-              element={<Crafting />} // New route for Crafting
             />
             <Route 
               path="/profile" 
