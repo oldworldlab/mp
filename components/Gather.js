@@ -74,13 +74,10 @@ function Gather({ provider, account, connectWallet }) {
     <Box sx={{ mt: 4, textAlign: 'center' }}>
       <Typography variant="h4">Gather Resources</Typography>
 
-      {!account ? (
-        <Button variant="contained" onClick={connectWallet}>
-          Connect Wallet
-        </Button>
-      ) : (
-        <Box>
-          <Typography variant="h6">Connected as: {account}</Typography>
+      <Box>
+        {account ? (
+          <>
+            <Typography variant="h6">Connected as: {account}</Typography>
 
           <TextField
             select
