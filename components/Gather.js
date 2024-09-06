@@ -114,8 +114,13 @@ function Gather({ provider, account, connectWallet }) {
               </li>
             ))}
           </ul>
-        </Box>
-      )}
+          </>
+        ) : (
+          <Button variant="contained" onClick={connectWallet}>
+            Connect Wallet
+          </Button>
+        )}
+      </Box>
     </Box>
   );
 }
