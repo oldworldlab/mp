@@ -149,7 +149,17 @@ function Gather() {
             label="Amount"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
-            sx={{ mb: 2, width: '200px' }}
+            sx={{
+              mb: 2,
+              width: '200px',
+              backgroundColor: '#ffffff',  // Set background color to white
+              color: '#000000',            // Set text color to black
+              borderRadius: '5px',         // Make corners slightly rounded
+              '& .MuiInputBase-input': { color: '#000' }, // Ensure text color is black
+            }}
+            InputLabelProps={{
+              style: { color: '#000' }  // Ensure label text is black
+            }}
             inputProps={{ min: 1 }}
           />
 
