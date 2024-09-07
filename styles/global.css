@@ -16,17 +16,17 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
 }
 
-button {
+button, select, input[type="text"] {
   margin-top: 10px;
-  background-color: #0066cc;
-  color: white;
+  background-color: #ffffff;
+  color: #000000;
   border-radius: 5px;
   padding: 10px 20px;
   border: none;
 }
 
-button:hover {
-  background-color: #005bb5;
+button:hover, select:hover, input[type="text"]:hover {
+  background-color: #f0f0f0;
 }
 
 .box {
