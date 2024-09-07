@@ -37,7 +37,9 @@ const WalletConnection = ({ setProvider }) => {
       {account ? (
         <p>Connected: {account}</p>
       ) : (
-        <button onClick={connectWallet}>Connect Wallet</button>
+        <button onClick={connectWallet}>
+          {isConnecting ? 'Connecting...' : 'Connect Wallet'}
+        </button>
       )}
     </div>
   );
