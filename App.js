@@ -163,7 +163,9 @@ function App() {
           {account ? (
             <Typography variant="body1">Connected: {account}</Typography>
           ) : (
-            <Button variant="contained" onClick={connectWallet}>Connect Wallet</Button>
+            <Button variant="contained" onClick={connectWallet}>
+              {provider ? 'Connecting...' : 'Connect Wallet'}
+            </Button>
           )}
         </div>
         <Container maxWidth="xl">
