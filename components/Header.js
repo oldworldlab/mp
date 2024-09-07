@@ -9,7 +9,7 @@ function Header() {
     <AppBar position="static" sx={{ backgroundColor: '#333333', boxShadow: '0 0 10px #00d1ff' }}>
       <Toolbar>
         <Typography variant="h6" sx={{ flexGrow: 1, color: '#00d1ff', textShadow: '0 0 5px #00d1ff, 0 0 20px #00d1ff' }}>
-          Blockchain Crafting Game
+          Secret Shop
         </Typography>
         <Button color="inherit" component={Link} to="/" sx={{ mx: 1, color: '#e0e0e0', '&:hover': { color: '#00ff85' } }}>
           Marketplace
