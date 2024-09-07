@@ -3,11 +3,32 @@ import { ethers } from 'ethers';
 import { Button, Box, Typography, TextField, MenuItem } from '@mui/material';
 
 // Deployed Greeter contract address
-const CONTRACT_ADDRESS = "0x7c58674D1c4694B7CAf94a9B7666D806F6862D6C";
+const CONTRACT_ADDRESS = "0xYourDeployedContractAddress"; // Ensure this is the correct address
 // ABI of the Greeter contract
 const CONTRACT_ABI = [
-  "function mintItem(uint256 itemId, uint256 amount, address to) external",
-  "function balanceOf(address account, uint256 id) external view returns (uint256)",
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "name": "id",
+        "type": "uint256"
+      }
+    ],
+    "name": "balanceOf",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  }
 ];
 
 // Item IDs matching the contract
@@ -40,6 +61,7 @@ function Gather() {
       await _provider.send("eth_requestAccounts", []); // This replaces the older request accounts method
       const signer = await _provider.getSigner();
       const _account = await signer.getAddress();
+      console.log('Connected Account:', _account);
       setProvider(_provider);
       setAccount(_account);
       
@@ -59,11 +81,11 @@ function Gather() {
     const _balances = {};
     for (const [key, value] of Object.entries(items)) {
       try {
-        const balance = await _contract.balanceOf(_account, value);
-        _balances[key] = parseInt(balance.toString());
-      } catch (error) {
-        console.error(`Error fetching balance for ${key}:`, error);
-        alert(`Failed to fetch balance for ${key}: ${error.message}`);
+      const balance = await _contract.balanceOf(_account, value);
+      console.log(`${key} Balance:`, balance.toString());
+      _balances[key] = parseInt(balance.toString());
+    } catch (error) {
+      console.error(`Failed to fetch balance for ${key}:`, error);
       }
     }
     setBalances(_balances);
