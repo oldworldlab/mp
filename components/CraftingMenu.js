@@ -141,7 +141,7 @@ function CraftingMenu({ inventory, marketplaceItems, onCraftItem, onPurchaseMate
         onChange={(e) => handleSelectItem(e.target.value)}
         fullWidth
         sx={{
-          mb: 3,  // Increased marginBottom for better spacing
+          marginBottom: '24px',   // Explicit margin for better spacing
           backgroundColor: '#ffffff',  // White background
           color: '#000000',             // Black text
           borderRadius: '5px',
@@ -163,7 +163,7 @@ function CraftingMenu({ inventory, marketplaceItems, onCraftItem, onPurchaseMate
         onChange={(e) => setTier(e.target.value)}
         fullWidth
         sx={{
-          mb: 3,  // Increased marginBottom for better spacing
+          marginBottom: '24px',  // Explicit margin for better spacing
           backgroundColor: '#ffffff',  // White background
           color: '#000000',             // Black text
           borderRadius: '5px',
@@ -185,13 +185,13 @@ function CraftingMenu({ inventory, marketplaceItems, onCraftItem, onPurchaseMate
         color="primary"
         onClick={handleCraft}
         disabled={isCrafting}
-        sx={{ mt: 3 }}  // Added marginTop to separate from the dropdowns
+        sx={{ marginTop: '24px' }}  // Explicit margin for better spacing
       >
         {isCrafting ? 'Crafting...' : 'Craft Item'}
       </Button>
 
       {craftedItem && (
-        <Box sx={{ mt: 2 }}>
+        <Box sx={{ marginTop: '24px' }}>
           <Typography variant="h6">Crafted {craftedItem.name}!</Typography>
         </Box>
       )}
