@@ -58,8 +58,13 @@ function Gather() {
   const loadBalances = async (_contract, _account) => {
     const _balances = {};
     for (const [key, value] of Object.entries(items)) {
-      const balance = await _contract.balanceOf(_account, value);
-      _balances[key] = parseInt(balance.toString());
+      try {
+        const balance = await _contract.balanceOf(_account, value);
+        _balances[key] = parseInt(balance.toString());
+      } catch (error) {
+        console.error(`Error fetching balance for ${key}:`, error);
+        alert(`Failed to fetch balance for ${key}: ${error.message}`);
+      }
     }
     setBalances(_balances);
   };
@@ -76,6 +81,7 @@ function Gather() {
         await loadBalances(contract, account);
       } catch (error) {
         console.error("Error minting item:", error);
+        alert("Failed to mint item: " + error.message);
       }
     }
   };
