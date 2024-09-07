@@ -132,15 +132,21 @@ function CraftingMenu({ inventory, marketplaceItems, onCraftItem, onPurchaseMate
   };
 
   return (
-    <Box sx={{ mt: 4 }}>
-      <h3>Craft Items</h3>
+    <Box sx={{ mt: 4, padding: '20px', backgroundColor: '#222', borderRadius: '10px' }}>
+      <Typography variant="h4" sx={{ color: '#e0e0e0', marginBottom: '20px' }}>Craft Items</Typography>
       <TextField
         select
         label="Select Item to Craft"
         value={selectedItem}
         onChange={(e) => handleSelectItem(e.target.value)}
         fullWidth
-        sx={{ mb: 2 }}
+        sx={{
+          mb: 2,
+          backgroundColor: '#ffffff',  // White background
+          color: '#000000',             // Black text
+          borderRadius: '5px',
+          '& .MuiInputBase-input': { color: '#000' }, // Ensure text is black
+        }}
         disabled={isCrafting}
       >
         {Object.keys(craftingRecipes).map((item) => (
@@ -156,7 +162,13 @@ function CraftingMenu({ inventory, marketplaceItems, onCraftItem, onPurchaseMate
         value={tier}
         onChange={(e) => setTier(e.target.value)}
         fullWidth
-        sx={{ mb: 2 }}
+        sx={{
+          mb: 2,
+          backgroundColor: '#ffffff',  // White background
+          color: '#000000',             // Black text
+          borderRadius: '5px',
+          '& .MuiInputBase-input': { color: '#000' }, // Ensure text is black
+        }}
         disabled={isCrafting}
       >
         {[...Array(8).keys()].map((tier) => (
