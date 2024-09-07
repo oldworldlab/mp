@@ -4,6 +4,10 @@ input, select, .MuiTextField-root, .MuiMenuItem-root {
   color: #000000 !important;             /* Black text color */
 }
 
+body {
+  background-color: #f5f5f5; /* Light gray background */
+}
+
 /* Ensure the input fields and select dropdowns have white background and black text by default */
 .MuiInputBase-root, .MuiOutlinedInput-root, .MuiSelect-root, .MuiTextField-root {
   background-color: #ffffff !important;  /* Set white background */
