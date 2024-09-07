@@ -1,5 +1,5 @@
 <Box className="container" sx={{ backgroundColor: '#1a1a1a', padding: 3 }}>
-  <Typography variant="h4" className="glow-effect">New Name</Typography>
+  <Typography variant="h4" className="glow-effect">Secret Shop</Typography>
   <TextField
     select
     label="Filter by Category"
@@ -40,7 +40,7 @@
     }}
   >
     <MenuItem value="All">All</MenuItem>
-    <MenuItem value="New Name">New Name</MenuItem>
+    <MenuItem value="Secret Shop">Secret Shop</MenuItem>
     <MenuItem value="Weapons">Weapons</MenuItem>
     {/* Add other categories as necessary */}
   </TextField>
