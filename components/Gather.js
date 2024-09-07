@@ -36,19 +36,24 @@ function Gather() {
   // Connect to MetaMask
   const connectWallet = async () => {
     if (window.ethereum) {
-      const _provider = new ethers.BrowserProvider(window.ethereum); // Use BrowserProvider instead of Web3Provider
-      await _provider.send("eth_requestAccounts", []); // This replaces the older request accounts method
-      const signer = await _provider.getSigner();
-      const _account = await signer.getAddress();
-      setProvider(_provider);
-      setAccount(_account);
-      
-      // Connect to the contract
-      const _contract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer);
-      setContract(_contract);
+      try {
+        const _provider = new ethers.BrowserProvider(window.ethereum);
+        await _provider.send("eth_requestAccounts", []);
+        const signer = await _provider.getSigner();
+        const _account = await signer.getAddress();
+        setProvider(_provider);
+        setAccount(_account);
+        
+        // Connect to the contract
+        const _contract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer);
+        setContract(_contract);
 
-      // Load initial balances
-      await loadBalances(_contract, _account);
+        // Load initial balances
+        await loadBalances(_contract, _account);
+      } catch (error) {
+        console.error("Error connecting to wallet or contract:", error);
+        alert("Failed to connect to wallet or contract: " + error.message);
+      }
     } else {
       alert("Please install MetaMask to use this feature.");
     }
