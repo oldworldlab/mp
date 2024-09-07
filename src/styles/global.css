@@ -6,9 +6,9 @@ input, select, .MuiTextField-root, .MuiMenuItem-root {
 
 /* Global background and text color */
 body, #root {
-  background-color: #f0f0f0;  /* Light gray background */
-  color: #333333;             /* Darker gray text for readability */
-  font-family: Arial, sans-serif;  /* Consistent font */
+  background-color: #1a1a1a;  /* Dark gray/black background */
+  color: #e0e0e0;             /* Light gray text for readability */
+  font-family: 'Orbitron', Arial, sans-serif;  /* Use a futuristic font like Orbitron */
 }
 
 /* General container styles for spacing and continuity */
@@ -20,12 +20,12 @@ body, #root {
 
 /* Consistent Card styling */
 .MuiCard-root, .MuiPaper-root {
-  background-color: #ffffff;  /* White background for cards */
-  color: #000000;             /* Black text color */
-  border-radius: 10px;        /* Rounded corners */
+  background-color: #333333;  /* Dark gray background for cards */
+  color: #e0e0e0;             /* Light gray text */
+  border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
-  margin-bottom: 20px;        /* Add space between cards */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);  /* Subtle shadow */
+  margin-bottom: 20px;
 }
 
 /* Consistent header and button styles */
@@ -34,24 +34,40 @@ body, #root {
 }
 
 .MuiButton-containedPrimary {
-  background-color: #007bff;  /* Consistent primary button color */
-  color: #ffffff;             /* White text */
+  background-color: #00d1ff;  /* Neon blue */
+  color: #1a1a1a;             /* Dark text on neon buttons */
+  border-radius: 8px;
+  box-shadow: 0 0 10px #00d1ff, 0 0 40px #00d1ff, 0 0 80px #00d1ff;  /* Neon glow */
+  transition: all 0.3s ease-in-out;
 }
 
 .MuiButton-containedPrimary:hover {
-  background-color: #0056b3;  /* Darker blue on hover */
+  background-color: #00ff85;  /* Neon green on hover */
+  box-shadow: 0 0 10px #00ff85, 0 0 40px #00ff85, 0 0 80px #00ff85;  /* Green glow */
+}
+
+.MuiButton-containedPrimary:active {
+  background-color: #7e57c2;  /* Electric purple when pressed */
+  box-shadow: 0 0 10px #7e57c2, 0 0 40px #7e57c2, 0 0 80px #7e57c2;  /* Purple glow */
 }
 
 .MuiTypography-h4, .MuiTypography-h5 {
-  font-weight: 500;           /* Consistent heading weights */
+  font-weight: 600;
+  color: #00d1ff;  /* Neon blue headings */
   margin-bottom: 20px;
 }
 
 /* Text input and select styling */
 .MuiInputBase-root, .MuiOutlinedInput-root, .MuiSelect-root, .MuiTextField-root {
-  background-color: #ffffff;  /* White background for inputs */
-  color: #000000;             /* Black text */
+  background-color: #222222;  /* Dark background for inputs */
+  color: #e0e0e0;             /* Light gray text */
   border-radius: 5px;
+  border: 1px solid #00d1ff;  /* Neon blue border */
+}
+
+.MuiInputBase-root:hover, .MuiOutlinedInput-root:hover, .MuiSelect-root:hover {
+  background-color: #333333;  /* Darker background on hover */
+  border-color: #00ff85;      /* Neon green border on hover */
 }
 
 /* List and Item styling */
@@ -84,12 +100,13 @@ li {
 
 /* Style dropdown items (when clicked) */
 .MuiMenuItem-root {
-  background-color: #ffffff !important;  /* White background for dropdown options */
-  color: #000000 !important;             /* Black text for dropdown options */
+  background-color: #222222;  /* Dark background for dropdowns */
+  color: #e0e0e0;             /* Light gray text */
 }
 
 .MuiMenuItem-root:hover {
-  background-color: #f0f0f0 !important;  /* Light gray background when hovering over options */
+  background-color: #00d1ff;  /* Neon blue on hover */
+  color: #1a1a1a;             /* Dark text on neon blue */
 }
 
 /* Style the dropdown icon */
