@@ -1,0 +1,29 @@
+/* Global Styles for dropdowns and input fields */
+input, select, .MuiTextField-root, .MuiMenuItem-root {
+  background-color: #ffffff !important;  /* White background for input and dropdowns */
+  color: #000000 !important;             /* Black text color */
+}
+
+.MuiMenuItem-root:hover {
+  background-color: #f0f0f0 !important;  /* Light gray background on hover */
+  color: #000000 !important;             /* Ensure text is black on hover */
+}
+
+.MuiSelect-root {
+  background-color: #ffffff !important;  /* White background for dropdown */
+  color: #000000 !important;             /* Black text color */
+}
+
+.MuiOutlinedInput-root {
+  background-color: #ffffff !important;  /* White background for outlined inputs */
+  color: #000000 !important;             /* Black text color */
+}
+
+.MuiInputBase-root {
+  background-color: #ffffff !important;  /* White background for input base */
+  color: #000000 !important;             /* Black text */
+}
+
+.MuiSelect-icon {
+  color: #000000 !important;             /* Black color for the dropdown icon */
+}
