@@ -3,12 +3,12 @@ import { ethers } from 'ethers';
 import { Button, Box, Typography, TextField, MenuItem } from '@mui/material';
 
 // Deployed Greeter contract address
-const CONTRACT_ADDRESS = "0x7c58674D1c4694B7CAf94a9B7666D806F6862D6C";
+const CONTRACT_ADDRESS = "0x7c58674D1c4694B7CAf94a9B7666D806F6862D6C"; // Ensure this is correct
 // ABI of the Greeter contract
 const CONTRACT_ABI = [
   "function mintItem(uint256 itemId, uint256 amount, address to) external",
   "function balanceOf(address account, uint256 id) external view returns (uint256)",
-];
+]; // Ensure this matches the deployed contract's ABI
 
 // Item IDs matching the contract
 const items = {
