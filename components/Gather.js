@@ -104,7 +104,38 @@ function Gather() {
             label="Select Resource"
             value={selectedItem}
             onChange={(e) => setSelectedItem(e.target.value)}
-            sx={{ mb: 2, width: '200px' }}
+            sx={{
+              mb: 2,
+              width: '200px',
+              backgroundColor: '#ffffff',  // Set background color to white
+              color: '#000000',            // Set text color to black
+              borderRadius: '5px',         // Make corners slightly rounded
+              '& .MuiInputBase-input': { color: '#000' }, // Ensure text color is black
+            }}
+            InputLabelProps={{
+              style: { color: '#000' }  // Ensure label text is black
+            }}
+            sx={{
+              mb: 2,
+              width: '200px',
+              backgroundColor: '#ffffff',  // Set background color to white
+              color: '#000000',            // Set text color to black
+              borderRadius: '5px',         // Make corners slightly rounded
+              '& .MuiInputBase-input': { color: '#000' }, // Ensure text color is black
+            }}
+            InputLabelProps={{
+              style: { color: '#000' }  // Ensure label text is black
+            }}
+            SelectProps={{
+              MenuProps: {
+                PaperProps: {
+                  style: {
+                    backgroundColor: '#fff',  // Ensure dropdown has white background
+                    color: '#000',            // Ensure dropdown text is black
+                  },
+                },
+              },
+            }}
           >
             {Object.keys(items).map((key) => (
               <MenuItem key={key} value={items[key]}>
