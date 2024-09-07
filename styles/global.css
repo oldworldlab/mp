@@ -22,7 +22,7 @@ button, select, input[type="text"] {
   color: #000000;
   border-radius: 5px;
   padding: 10px 20px;
-  border: none;
+  border: 1px solid #ccc;
 }
 
 button:hover, select:hover, input[type="text"]:hover {
