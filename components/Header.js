@@ -1,6 +1,7 @@
 // components/Header.js
 
 import React from 'react';
+import { Box, Typography } from '@mui/material';
 import { AppBar, Toolbar, Typography, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 
