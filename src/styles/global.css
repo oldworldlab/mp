@@ -4,26 +4,34 @@ input, select, .MuiTextField-root, .MuiMenuItem-root {
   color: #000000 !important;             /* Black text color */
 }
 
+/* Ensure the input fields and select dropdowns have white background and black text by default */
+.MuiInputBase-root, .MuiOutlinedInput-root, .MuiSelect-root, .MuiTextField-root {
+  background-color: #ffffff !important;  /* Set white background */
+  color: #000000 !important;             /* Set black text color */
+  border-color: #000000 !important;      /* Set border color */
+}
+
+/* Hover and focus states for inputs and selects */
+.MuiOutlinedInput-root:hover, .MuiSelect-root:hover, .MuiTextField-root:hover {
+  background-color: #ffffff !important;  /* Ensure hover background is still white */
+}
+
+.MuiOutlinedInput-root.Mui-focused, .MuiSelect-root.Mui-focused, .MuiTextField-root.Mui-focused {
+  background-color: #ffffff !important;  /* Ensure focused background is white */
+  color: #000000 !important;             /* Ensure focused text is black */
+}
+
+/* Style dropdown items (when clicked) */
+.MuiMenuItem-root {
+  background-color: #ffffff !important;  /* White background for dropdown options */
+  color: #000000 !important;             /* Black text for dropdown options */
+}
+
 .MuiMenuItem-root:hover {
-  background-color: #f0f0f0 !important;  /* Light gray background on hover */
-  color: #000000 !important;             /* Ensure text is black on hover */
+  background-color: #f0f0f0 !important;  /* Light gray background when hovering over options */
 }
 
-.MuiSelect-root {
-  background-color: #ffffff !important;  /* White background for dropdown */
-  color: #000000 !important;             /* Black text color */
-}
-
-.MuiOutlinedInput-root {
-  background-color: #ffffff !important;  /* White background for outlined inputs */
-  color: #000000 !important;             /* Black text color */
-}
-
-.MuiInputBase-root {
-  background-color: #ffffff !important;  /* White background for input base */
-  color: #000000 !important;             /* Black text */
-}
-
+/* Style the dropdown icon */
 .MuiSelect-icon {
-  color: #000000 !important;             /* Black color for the dropdown icon */
+  color: #000000 !important;  /* Black color for the dropdown arrow icon */
 }
