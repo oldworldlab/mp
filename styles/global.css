@@ -16,12 +16,21 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
 }
 
-button, select, input[type="text"] {
+button, input[type="text"] {
   margin-top: 10px;
   background-color: #ffffff;
   color: #000000;
   border-radius: 5px;
   padding: 10px 20px;
+  border: 1px solid #ccc;
+}
+
+select {
+  margin-top: 10px;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 5px;
+  padding: 10px;
   border: 1px solid #ccc;
 }
 
