@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
 import { Button, Box, Typography, TextField, MenuItem } from '@mui/material';
-import { ethers } from 'ethers';
-import { Button, Box, Typography, TextField, MenuItem } from '@mui/material';
 
 // Deployed Greeter contract address
 const CONTRACT_ADDRESS = "0x7c58674D1c4694B7CAf94a9B7666D806F6862D6C"; // Ensure this is correct
