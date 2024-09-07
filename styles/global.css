@@ -1,11 +1,29 @@
 /* Add this to your global CSS file */
 
+/* Global background color and text color */
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #1a1a1a;
-  color: white;
+  background-color: #f0f0f0;  /* Lighter gray background */
+  color: #000000;             /* Default black text */
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+}
+
+/* Ensure the main container or app container inherits the background */
+#root {
+  background-color: #f0f0f0;  /* Lighter gray for the entire app */
+}
+
+/* Override MUI components like AppBar */
+.MuiAppBar-root {
+  background-color: #4a4a4a;  /* Darker gray for the header bar */
+}
+
+/* Ensure cards and containers stand out against the lighter background */
+.MuiCard-root, .MuiPaper-root {
+  background-color: #ffffff;  /* White background for cards */
+  color: #000000;             /* Ensure black text */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
 }
 
 .container {

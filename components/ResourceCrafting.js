@@ -2,9 +2,10 @@ import React from 'react';
 
 const ResourceCrafting = () => {
   return (
-    <div>
-      <h1>Resource Crafting Page</h1>
-    </div>
+    <Box sx={{ backgroundColor: '#ffffff', color: '#000000', padding: 3, borderRadius: 2 }}>
+      <Typography variant="h4">Craft Resources</Typography>
+      {/* Other elements here */}
+    </Box>
   );
 };
 

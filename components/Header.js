@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 function Header() {
   return (
-    <AppBar position="static" style={{ backgroundColor: '#333' }}>
+    <AppBar position="static" sx={{ backgroundColor: '#4a4a4a' }}>
       <Toolbar>
         <Typography variant="h6" style={{ flexGrow: 1 }}>
           Blockchain Crafting Game
