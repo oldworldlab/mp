@@ -69,6 +69,10 @@ function Gather() {
       } catch (error) {
         console.error(`Error fetching balance for ${key}:`, error);
         alert(`Failed to fetch balance for ${key}: ${error.message}`);
+        console.log("Contract address:", CONTRACT_ADDRESS);
+        console.log("Account:", _account);
+        console.log("Item ID:", value);
+        console.log("Error details:", error);
         _balances[key] = 0; // Default to 0 if there's an error
       }
     }
