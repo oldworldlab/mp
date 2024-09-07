@@ -163,7 +163,7 @@ function CraftingMenu({ inventory, marketplaceItems, onCraftItem, onPurchaseMate
         onChange={(e) => setTier(e.target.value)}
         fullWidth
         sx={{
-          mb: 2,
+          mb: 3, // Add more margin between item selection and tier selection
           backgroundColor: '#ffffff',  // White background
           color: '#000000',             // Black text
           borderRadius: '5px',
