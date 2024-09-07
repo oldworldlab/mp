@@ -12,6 +12,9 @@
       backgroundColor: '#ffffff',  // White background for dropdown
       color: '#000000',            // Black text color
     },
+    '& .MuiSelect-icon': {
+      color: '#000000',  // Black color for dropdown arrow
+    }
   }}
 >
   {Object.keys(craftingCosts).map((key) => (
