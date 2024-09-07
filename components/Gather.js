@@ -64,7 +64,11 @@ function Gather() {
     const _balances = {};
     for (const [key, value] of Object.entries(items)) {
       try {
-        const balance = await _contract.balanceOf(_account, value);
+        const balance = await _contract.balanceOf(_account, value).catch(error => {
+          console.error(`Error fetching balance for ${key}:`, error);
+          alert(`Failed to fetch balance for ${key}: ${error.message}`);
+          return 0; // Default to 0 if there's an error
+        });
         _balances[key] = parseInt(balance.toString());
       } catch (error) {
         console.error(`Error fetching balance for ${key}:`, error);
