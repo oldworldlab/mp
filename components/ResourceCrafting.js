@@ -3,10 +3,10 @@ import { Box, Typography } from '@mui/material';
 
 const ResourceCrafting = () => {
   return (
-    <Box sx={{ backgroundColor: '#ffffff', color: '#000000', padding: 3, borderRadius: 2 }}>
+    <div className="container">
       <Typography variant="h4">Craft Resources</Typography>
       {/* Other elements here */}
-    </Box>
+    </div>
   );
 };
 

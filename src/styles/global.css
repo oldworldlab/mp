@@ -4,8 +4,65 @@ input, select, .MuiTextField-root, .MuiMenuItem-root {
   color: #000000 !important;             /* Black text color */
 }
 
-body {
-  background-color: #f5f5f5; /* Light gray background */
+/* Global background and text color */
+body, #root {
+  background-color: #f0f0f0;  /* Light gray background */
+  color: #333333;             /* Darker gray text for readability */
+  font-family: Arial, sans-serif;  /* Consistent font */
+}
+
+/* General container styles for spacing and continuity */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Consistent Card styling */
+.MuiCard-root, .MuiPaper-root {
+  background-color: #ffffff;  /* White background for cards */
+  color: #000000;             /* Black text color */
+  border-radius: 10px;        /* Rounded corners */
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+  margin-bottom: 20px;        /* Add space between cards */
+}
+
+/* Consistent header and button styles */
+.MuiAppBar-root {
+  background-color: #4a4a4a;  /* Darker gray header */
+}
+
+.MuiButton-containedPrimary {
+  background-color: #007bff;  /* Consistent primary button color */
+  color: #ffffff;             /* White text */
+}
+
+.MuiButton-containedPrimary:hover {
+  background-color: #0056b3;  /* Darker blue on hover */
+}
+
+.MuiTypography-h4, .MuiTypography-h5 {
+  font-weight: 500;           /* Consistent heading weights */
+  margin-bottom: 20px;
+}
+
+/* Text input and select styling */
+.MuiInputBase-root, .MuiOutlinedInput-root, .MuiSelect-root, .MuiTextField-root {
+  background-color: #ffffff;  /* White background for inputs */
+  color: #000000;             /* Black text */
+  border-radius: 5px;
+}
+
+/* List and Item styling */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px 0;
+  border-bottom: 1px solid #cccccc;
 }
 
 /* Ensure the input fields and select dropdowns have white background and black text by default */

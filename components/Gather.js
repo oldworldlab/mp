@@ -82,7 +82,7 @@ function Gather() {
 
   // UI for gathering resources
   return (
-    <Box sx={{ mt: 4, textAlign: 'center' }}>
+    <div className="container">
       <Typography variant="h4">Gather Resources</Typography>
 
       {!account ? (
@@ -130,7 +130,7 @@ function Gather() {
           </ul>
         </Box>
       )}
-    </Box>
+    </div>
   );
 }
 
